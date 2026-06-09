@@ -1,0 +1,7 @@
+scenario,years,initial_n,profile_detection,mark_detection,measurement_sd,environment_sd,latent_quality_sd,effort_pattern
+smoke,6,500,0.60,0.35,1.0,0.00,0.00,constant
+short_sparse,3,250,0.25,0.20,2.0,0.00,0.00,constant
+long_dense,16,1000,0.75,0.45,0.5,0.00,0.00,constant
+variable_environment,12,750,0.60,0.35,1.0,0.50,0.00,constant
+latent_heterogeneity,12,750,0.60,0.35,1.0,0.00,0.75,constant
+variable_effort,12,750,0.60,0.35,1.0,0.00,0.00,alternating

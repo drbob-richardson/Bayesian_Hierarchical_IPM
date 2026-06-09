@@ -1,0 +1,10 @@
+Package: profileIPM
+Title: Identifiability in Inverse Integral Projection Models
+Version: 0.0.0.9000
+Authors@R: person("Robert", "Richardson", role = c("aut", "cre"))
+Description: Research tools for simulating size-structured populations and
+    studying recovery of vital rates from repeated cross-sectional size
+    profiles.
+License: TBD
+Encoding: UTF-8
+RoxygenNote: 7.3.2

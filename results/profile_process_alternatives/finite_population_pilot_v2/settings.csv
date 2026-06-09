@@ -1,0 +1,2 @@
+"experiment","replicates","posterior_draws","scenarios","methods"
+"finite_population_pilot_v2",10,500,"parent_excitation_sparse,parent_excitation_dense","one_step_gamma_poisson,one_step_finite_population,one_step_finite_population_overdispersed"

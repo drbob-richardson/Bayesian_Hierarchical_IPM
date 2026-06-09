@@ -1,0 +1,2 @@
+"experiment","replicates","posterior_draws","scenarios","methods"
+"parent_excitation",10,400,"parent_excitation_sparse,parent_excitation_dense","recursive_gamma_poisson,one_step_gamma_poisson,one_step_shared_gamma_poisson"

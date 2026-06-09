@@ -1,0 +1,2 @@
+"experiment","replicates","posterior_draws","scenarios","methods"
+"recovery_targeted",10,400,"standard,dense_profiles,rich_design","recursive_gamma_poisson,one_step_gamma_poisson,one_step_shared_gamma_poisson,one_step_gamma_poisson_shape_informed,one_step_gamma_poisson_fixed_recruitment_slope"
