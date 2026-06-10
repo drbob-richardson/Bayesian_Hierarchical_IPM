@@ -1,0 +1,7 @@
+"truth_name","borrowing","largest_tested_safe_bias","first_bias_with_worse_coverage"
+"baseline","full",0.25,0.5
+"flatter_fecundity","full",0,0.25
+"low_survival","full",0.25,0.5
+"baseline","robust",0.25,0.5
+"flatter_fecundity","robust",0,0.25
+"low_survival","robust",0.25,0.5

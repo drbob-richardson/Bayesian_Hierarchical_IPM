@@ -10,10 +10,11 @@ library(parallel)
 
 mesh <- seq(25, 160, by = 5)
 truths <- transportability_truths()
-replicates <- 10L
+replicates <- as.integer(Sys.getenv("TRANSPORT_REPLICATES", "10"))
 bias_multipliers <- c(0, 0.25, 0.50, 0.75, 1.00, 1.50)
-data_directory <- "results/transportability_boundary/data"
-task_directory <- "results/transportability_boundary/tasks"
+base_directory <- Sys.getenv("TRANSPORT_DIR", "results/transportability_boundary")
+data_directory <- file.path(base_directory, "data")
+task_directory <- file.path(base_directory, "tasks")
 dir.create(data_directory, recursive = TRUE, showWarnings = FALSE)
 dir.create(task_directory, recursive = TRUE, showWarnings = FALSE)
 
@@ -25,7 +26,7 @@ data_grid <- expand.grid(
 data_grid$data_id <- seq_len(nrow(data_grid))
 write.csv(
   data_grid,
-  "results/transportability_boundary/data_grid.csv",
+  file.path(base_directory, "data_grid.csv"),
   row.names = FALSE
 )
 
@@ -81,7 +82,7 @@ tasks <- merge(tasks, data_grid, by = "data_id", all.x = TRUE, sort = FALSE)
 tasks$task_id <- seq_len(nrow(tasks))
 write.csv(
   tasks,
-  "results/transportability_boundary/task_grid.csv",
+  file.path(base_directory, "task_grid.csv"),
   row.names = FALSE
 )
 
@@ -92,7 +93,8 @@ available_cores <- suppressWarnings(as.integer(system(
 if (!is.finite(available_cores)) {
   available_cores <- detectCores(logical = TRUE)
 }
-cores <- max(1L, min(6L, available_cores - 1L))
+core_cap <- as.integer(Sys.getenv("TRANSPORT_CORES", "6"))
+cores <- max(1L, min(core_cap, available_cores - 1L))
 
 cat("Generating", nrow(data_grid), "multi-truth datasets on", cores, "cores.\n")
 data_paths <- mclapply(
@@ -101,7 +103,7 @@ data_paths <- mclapply(
   mc.cores = cores,
   mc.preschedule = FALSE
 )
-saveRDS(data_paths, "results/transportability_boundary/data_paths.rds")
+saveRDS(data_paths, file.path(base_directory, "data_paths.rds"))
 
 run_task <- function(task) {
   output_path <- file.path(
@@ -197,5 +199,5 @@ paths <- mclapply(
   mc.cores = cores,
   mc.preschedule = FALSE
 )
-saveRDS(paths, "results/transportability_boundary/task_paths.rds")
+saveRDS(paths, file.path(base_directory, "task_paths.rds"))
 cat("Completed transportability-boundary experiment.\n")
