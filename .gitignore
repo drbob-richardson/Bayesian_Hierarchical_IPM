@@ -6,3 +6,10 @@
 results/logs/
 # Large external CC0 dataset (~30 MB); fetch with scripts/fetch_west_brook.sh
 data/west_brook/cdWB_electro_DR.csv
+# LaTeX build artifacts (keep .tex and .pdf)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
