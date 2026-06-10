@@ -1,0 +1,1304 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata>
+  <idinfo>
+    <citation>
+      <citeinfo>
+        <origin>Benjamin H Letcher</origin>
+        <pubdate>20240923</pubdate>
+        <title>Passive integrated transponder tag data from the West Brook, MA, USA</title>
+        <edition>1.0</edition>
+        <geoform>tabular digital data</geoform>
+        <pubinfo>
+          <pubplace>Reston, VA</pubplace>
+          <publish>U.S. Geological Survey</publish>
+        </pubinfo>
+        <othercit>Sciencebase</othercit>
+        <onlink>https://doi.org/10.5066/P14PDHXM</onlink>
+      </citeinfo>
+    </citation>
+    <descript>
+      <abstract>The Ecology Section at the USGS Conte Laboratory has studied fish in the West Brook since 1997. The goal is to understand the strength and direction of drivers on fish growth, movement, reproduction and survival in the wild. We hope to provide a comprehensive understanding of fish population dynamics for this stream network and ultimately individual fitness (natural selection and evolution) in the study area.</abstract>
+      <purpose>Sampling was conducted to collect data on individual fish for population dynamics models, body growth models, movement models and models of reproductive success. Appropriate use includes models based on individual tagging data.</purpose>
+    </descript>
+    <timeperd>
+      <timeinfo>
+        <rngdates>
+          <begdate>19970922</begdate>
+          <enddate>20170605</enddate>
+        </rngdates>
+      </timeinfo>
+      <current>ground condition</current>
+    </timeperd>
+    <status>
+      <progress>Complete</progress>
+      <update>As needed</update>
+    </status>
+    <spdom>
+      <descgeog>Whately Massachusetts</descgeog>
+      <bounding>
+        <westbc>-72.7666</westbc>
+        <eastbc>-72.5963</eastbc>
+        <northbc>42.5227</northbc>
+        <southbc>42.4062</southbc>
+      </bounding>
+    </spdom>
+    <keywords>
+      <theme>
+        <themekt>ISO 19115 Topic Category</themekt>
+        <themekey>biota</themekey>
+        <themekey>inlandWaters</themekey>
+      </theme>
+      <theme>
+        <themekt>None</themekt>
+        <themekey>Climate change</themekey>
+        <themekey>Movement</themekey>
+        <themekey>Population Dynamics</themekey>
+        <themekey>Survival</themekey>
+        <themekey>Reproduction</themekey>
+        <themekey>Fish Growth</themekey>
+      </theme>
+      <theme>
+        <themekt>USGS Metadata Identifier</themekt>
+        <themekey>USGS:66cc8fe5d34e98e8a9243552</themekey>
+      </theme>
+    </keywords>
+    <taxonomy>
+      <keywtax>
+        <taxonkt>None</taxonkt>
+        <taxonkey>brook trout</taxonkey>
+        <taxonkey>brown trout</taxonkey>
+        <taxonkey>Atlantic salmon</taxonkey>
+      </keywtax>
+      <taxoncl>
+        <taxonrn>Kingdom</taxonrn>
+        <taxonrv>Animalia</taxonrv>
+        <common>animals</common>
+        <taxoncl>
+          <taxonrn>Subkingdom</taxonrn>
+          <taxonrv>Bilateria</taxonrv>
+          <common>triploblasts</common>
+          <taxoncl>
+            <taxonrn>Infrakingdom</taxonrn>
+            <taxonrv>Deuterostomia</taxonrv>
+            <taxoncl>
+              <taxonrn>Phylum</taxonrn>
+              <taxonrv>Chordata</taxonrv>
+              <common>chordates</common>
+              <taxoncl>
+                <taxonrn>Subphylum</taxonrn>
+                <taxonrv>Vertebrata</taxonrv>
+                <common>vertebrates</common>
+                <taxoncl>
+                  <taxonrn>Infraphylum</taxonrn>
+                  <taxonrv>Gnathostomata</taxonrv>
+                  <taxoncl>
+                    <taxonrn>Superclass</taxonrn>
+                    <taxonrv>Actinopterygii</taxonrv>
+                    <common>ray-finned fishes</common>
+                    <common>spiny rayed fishes</common>
+                    <taxoncl>
+                      <taxonrn>Class</taxonrn>
+                      <taxonrv>Teleostei</taxonrv>
+                      <taxoncl>
+                        <taxonrn>Superorder</taxonrn>
+                        <taxonrv>Protacanthopterygii</taxonrv>
+                        <taxoncl>
+                          <taxonrn>Order</taxonrn>
+                          <taxonrv>Salmoniformes</taxonrv>
+                          <common>salmons</common>
+                          <taxoncl>
+                            <taxonrn>Family</taxonrn>
+                            <taxonrv>Salmonidae</taxonrv>
+                            <common>salmonids</common>
+                            <common>trouts and salmons</common>
+                            <common>salmons</common>
+                            <common>trouts</common>
+                            <taxoncl>
+                              <taxonrn>Subfamily</taxonrn>
+                              <taxonrv>Salmoninae</taxonrv>
+                              <taxoncl>
+                                <taxonrn>Genus</taxonrn>
+                                <taxonrv>Salvelinus</taxonrv>
+                                <common>chars</common>
+                                <taxoncl>
+                                  <taxonrn>Species</taxonrn>
+                                  <taxonrv>Salvelinus fontinalis</taxonrv>
+                                  <common>brook trout</common>
+                                  <common>charr</common>
+                                  <common>salter</common>
+                                  <common>sea trout</common>
+                                  <common>coaster brook trout</common>
+                                  <common>aurora trout</common>
+                                  <common>TSN: 162003</common>
+                                </taxoncl>
+                              </taxoncl>
+                              <taxoncl>
+                                <taxonrn>Genus</taxonrn>
+                                <taxonrv>Salmo</taxonrv>
+                                <common>Atlantic salmon</common>
+                                <common>TSN: 161994</common>
+                                <taxoncl>
+                                  <taxonrn>Species</taxonrn>
+                                  <taxonrv>Salmo trutta</taxonrv>
+                                  <common>brown trout</common>
+                                  <common>TSN: 161997</common>
+                                </taxoncl>
+                              </taxoncl>
+                            </taxoncl>
+                          </taxoncl>
+                        </taxoncl>
+                      </taxoncl>
+                    </taxoncl>
+                  </taxoncl>
+                </taxoncl>
+              </taxoncl>
+            </taxoncl>
+          </taxoncl>
+        </taxoncl>
+      </taxoncl>
+    </taxonomy>
+    <accconst>None.  Please see 'Distribution Info' for details.</accconst>
+    <useconst>None.  Users are advised to read the dataset's metadata thoroughly to understand appropriate use and data limitations.</useconst>
+    <ptcontac>
+      <cntinfo>
+        <cntperp>
+          <cntper>Benjamin Letcher</cntper>
+          <cntorg>USGS - Northeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>EESC SO Conte Anadromous Rsch Ctr,Research Lab</address>
+          <city>Turners Falls</city>
+          <state>MA</state>
+          <postal>01376</postal>
+        </cntaddr>
+        <cntvoice>413-863-3803</cntvoice>
+        <cntemail>bletcher@usgs.gov</cntemail>
+      </cntinfo>
+    </ptcontac>
+    <datacred>Keith Nislow US Forest Service</datacred>
+    <native>Windows 10, R v 4.3.1</native>
+  </idinfo>
+  <dataqual>
+    <attracc>
+      <attraccr>True values are unknown. The data are used in models to estimate growth and survival rates.
+Based on repeat measures of single individuals, length measurements are +/- 0.1 mm and mass measurements are +/- 0.1 mg.</attraccr>
+    </attracc>
+    <logic>Data have been thoroughly checked.</logic>
+    <complete>Dataset is considered complete for the information presented 09/22/1997 - 06/05/2017.</complete>
+    <posacc>
+      <horizpa>
+        <horizpar>NA</horizpar>
+      </horizpa>
+      <vertacc>
+        <vertaccr>NA</vertaccr>
+      </vertacc>
+    </posacc>
+    <lineage>
+      <procstep>
+        <procdesc>Fish were collected by electrofishing the West Brook and 3 tributaries. Individuals were measured for length and mass and tagged with a PIT tag.</procdesc>
+        <procdate>20240819</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Naturally reproducing populations of brook trout  and brown trout inhabit the WB, OL and OS (minimal numbers of brown trout in OS). Only brook trout have been found in IS. Atlantic salmon fry were stocked into the WB during early years of the study (2002–2004). The only other species consistently found in the WB is blacknose dace, but densities are generally low. There is no trout stocking in the study area, and fishing pressure is very low.</procdesc>
+        <procdate>20240819</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>We conducted seasonal sampling (spring = late March, summer = June, autumn = late September, winter = early December) of the WB and three tributaries since 2002 and report data collected from summer 2002 to spring 2012 for a total of 43 sampling occasions (Table S1, Supporting information). Sampling consisted of collecting fish from 20-m sections sequentially from downstream to upstream in each reach (47 sections in the WB and 15 sections in each of the tributaries). In the WB, we used temporary block nets to isolate each section and ran two electrofishing passes (200–300 V unpulsed DC). In the tributaries where capture rates were high, we did not use block nets and conducted one pass surveys. On capture, we measured the fork length (+/-1 mm) and recorded the section of capture of each fish. We also recorded the tag number of tagged fish and tagged any untagged fish larger than 60-mm fork length. Tags were 12-mm PIT (Digital Angel, St. Paul, MN, USA) tags, which provide unique alphanumeric codes for each fish. Following workup, fish were returned to capture sections.</procdesc>
+        <procdate>20240819</procdate>
+      </procstep>
+      <procstep>
+        <procdesc>Stream temperature was recorded every 2 h with data loggers (Onset Corp., Bourne, MA, USA) placed at the downstream end of the study area in the WB and just upstream of the confluence of each tributary. Stream depth was also recorded every two hr (Onset Corp.) at the downstream end of the WB study area and reflects an index of among-year seasonal variation across the study area. Depth was converted to stream flow (m3 s-1) using a stage-discharge relationship.</procdesc>
+        <procdate>20240819</procdate>
+      </procstep>
+    </lineage>
+  </dataqual>
+  <eainfo>
+    <detailed>
+      <enttyp>
+        <enttypl>cdWB_electro_DR.csv</enttypl>
+        <enttypd>Comma Separated Value (CSV) file containing data.</enttypd>
+        <enttypds>Producer Defined</enttypds>
+      </enttyp>
+      <attr>
+        <attrlabl>rownumber</attrlabl>
+        <attrdef>Row number</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>91103</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>drainage</attrlabl>
+        <attrdef>Drainage location</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>west</edomv>
+            <edomvd>West Brook drainage</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>species</attrlabl>
+        <attrdef>Fish species</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>bkt</edomv>
+            <edomvd>brook trout (Salvelinus fontinalis, native, self-sustaining population)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>bnt</edomv>
+            <edomvd>brown trout (Salmo trutta, non-native, self-sustaining population)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>ats</edomv>
+            <edomvd>Atlantic salmon (Salmo salar, stocked as fry through 2005, no reproduction)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cohort</attrlabl>
+        <attrdef>Year the fish emerged from gravel in the spring (spawning occurred previous autumn), assigned based on size at initial capture and size distributions of fish of known age.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>1993</rdommin>
+            <rdommax>2021</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>river</attrlabl>
+        <attrdef>River the fish was observed in.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>wb obear</edomv>
+            <edomvd>Smaller tributary that has a waterfall at its mouth, so fish can only move downstream into WB section 20 (“Isolated Small” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>west brook</edomv>
+            <edomvd>The mainstem (“West Brook” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>wb jimmy</edomv>
+            <edomvd>Larger tributary that fish can move back and forth into from WB section 31 (“Open Large” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>wb mitchell</edomv>
+            <edomvd>Smaller tributary that fish can move back and forth into from WB section 35 (“Open Small” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>riverOrdered</attrlabl>
+        <attrdef>River the fish was observed in, ordered as a factor and renamed.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>Isolated small</edomv>
+            <edomvd>Smaller tributary that has a waterfall at its mouth, so fish can only move downstream into WB section 20 (“Isolated Small” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>West Brook</edomv>
+            <edomvd>The mainstem (“West Brook” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Open Large</edomv>
+            <edomvd>Larger tributary that fish can move back and forth into from WB section 31 (“Open Large” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>Open small</edomv>
+            <edomvd>Smaller tributary that fish can move back and forth into from WB section 35 (“Open Small” from Letcher et al 2015).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>tag</attrlabl>
+        <attrdef>Pit tag number</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>PIT tag number, unique identifier, character. Tags are 12-mm, full duplex. Biomark tags were used until 2002, and then replaced with Destron-fearing tags.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nPerInd</attrlabl>
+        <attrdef>Number of electrofishing occasion observations per individual.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>26164</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>survey</attrlabl>
+        <attrdef>“shock” = electroshocking survey. Retained here for compatibility with other data sets.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>shock</edomv>
+            <edomvd>Sampled via elocrtoshocking</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>pass</attrlabl>
+        <attrdef>Electrofishing pass. 1 or 2 in the west brook (inside), 1 in tributaries.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>2</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>nPasses</attrlabl>
+        <attrdef>Number of electrofishing passes for the section where the fish was captured. 1 or 2 in the west brook (inside), 1 in tributaries.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>2</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>proportionSampled</attrlabl>
+        <attrdef>Occasionally the sample was not complete (e.g., skipped west brook but did the tributaries). This is the proportion of sections in the river of capture that were sampled for the given sampling occasion.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0425531914893617</rdommin>
+            <rdommax>1.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>aliveOrDead</attrlabl>
+        <attrdef>Fish know to be alive or dead..</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>alive</edomv>
+            <edomvd>Fish observed alive</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>section</attrlabl>
+        <attrdef>Identifier for the 20m section where the fish was captured. This is ordered from downstream to upstream ranging from 1-47 for the inside study area for the West Brook and from 1-14 or 1-15 for the trib area of the tributaries (river wb mitchell starts a -1 to accommodate the downstream PIT tag antenna). Above and below the inside study area in the West Brook, section numbers indicate the number of meters from the downstream or upstream end of the study area.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.0</rdommin>
+            <rdommax>120.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sectionN</attrlabl>
+        <attrdef>repeat of 'section'</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.0</rdommin>
+            <rdommax>120.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lagSection</attrlabl>
+        <attrdef>Section number lagged forward one sampling occasion.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1</rdommin>
+            <rdommax>120</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>riverMeter</attrlabl>
+        <attrdef>River meter from the confluence of the West Brook with the Mill River.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>4242.25</rdommin>
+            <rdommax>5493.85</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sectionOriginal</attrlabl>
+        <attrdef>Original section number before renumbering. Maintained for compatibility with early data sets.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.0</rdommin>
+            <rdommax>120.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>quarter</attrlabl>
+        <attrdef>Early in the study, salmon were also assigned to a quarter within each section, from the bottom of the section to the top.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>NA</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>area</attrlabl>
+        <attrdef>Broad location within the study area.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>trib</edomv>
+            <edomvd>tributary (not west brook)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>inside</edomv>
+            <edomvd>section 1:47 in the west brook</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>below</edomv>
+            <edomvd>sections below inside sections (decreasing numbers in meters from the bottom of the inside area)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>above</edomv>
+            <edomvd>sections above the inside sections (increasing numbers in meters from the top of the inside area).</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>distMoved</attrlabl>
+        <attrdef>Meters between locations for consecutive capture occasions.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-120</rdommin>
+            <rdommax>111</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>moveDir</attrlabl>
+        <attrdef>Direction of movement between locations for consecutive capture occasions</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>-1</edomv>
+            <edomvd>downstream</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>0</edomv>
+            <edomvd>same section</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>upstream</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>detectionDate</attrlabl>
+        <attrdef>Date the fish was observed. POSIXct format.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <udom>Date fish was captured</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lagDetectionDate</attrlabl>
+        <attrdef>Detection date lagged forward one observation for consecutive capture occasions.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Capture date lagged forward.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>year</attrlabl>
+        <attrdef>Year of observation.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1997</rdommin>
+            <rdommax>2021</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>season</attrlabl>
+        <attrdef>season of observation</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>1</edomv>
+            <edomvd>spring</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>2</edomv>
+            <edomvd>summer</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>3</edomv>
+            <edomvd>fall</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>4</edomv>
+            <edomvd>winter</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>yday</attrlabl>
+        <attrdef>Day of the year of observation.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>2</rdommin>
+            <rdommax>365</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sampleName</attrlabl>
+        <attrdef>Original sample name before renumbering. Maintained for consistency with early data sets.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.0</rdommin>
+            <rdommax>103.0</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sampleNumber</attrlabl>
+        <attrdef>A tidier identifier for samples that strictly increases by one for each season (4/yr) and starts at 1.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10</rdommin>
+            <rdommax>92</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>observedLength</attrlabl>
+        <attrdef>Fish fork length in mm.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>19.0</rdommin>
+            <rdommax>397.0</rdommax>
+            <attrunit>mm</attrunit>
+            <attrmres>1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>observedWeight</attrlabl>
+        <attrdef>Fish wet weight.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.1</rdommin>
+            <rdommax>490.7</rdommax>
+            <attrunit>g wet weight</attrunit>
+            <attrmres>0.1</attrmres>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lagObservedWeight</attrlabl>
+        <attrdef>Observed weight lagged forward one observation for consecutive capture occasions. NA if not observed.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>1.6</rdommin>
+            <rdommax>490.7</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lagObservedLength</attrlabl>
+        <attrdef>Observed length lagged forward one observation for consecutive capture occasions. NA if not observed.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>54</rdommin>
+            <rdommax>397</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>lagSampleNumber</attrlabl>
+        <attrdef>Sample number lagged forward one observation for consecutive capture occasions.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>11</rdommin>
+            <rdommax>85</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sampleNumberDiff</attrlabl>
+        <attrdef>Difference in sample numbers between consecutive capture occasions.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>1</rdommin>
+            <rdommax>11</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sampleInterval</attrlabl>
+        <attrdef>Number of days between consecutive capture occasions.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0</rdommin>
+            <rdommax>1039.14375</rdommax>
+            <attrunit>day</attrunit>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>grWeight</attrlabl>
+        <attrdef>'Instantaneous' growth rate in mass. ln(lagObservedWeight - observedWeight) / sampleInterval.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.0390199025465448</rdommin>
+            <rdommax>0.0329621556886049</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>grLength</attrlabl>
+        <attrdef>Growth rate in length. (lagObservedLength - observedLength) / sampleInterval.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.222792382769691</rdommin>
+            <rdommax>1.18394972911864</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>minSample</attrlabl>
+        <attrdef>Minimum (first) sample number for the individual.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10</rdommin>
+            <rdommax>86</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>maxSample</attrlabl>
+        <attrdef>Maximum (last) sample number for the individual.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <rdom>
+            <rdommin>10</rdommin>
+            <rdommax>92</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>ageInSamples</attrlabl>
+        <attrdef>Number of seasons since summer of the year of birth (1st summer = 0, 1st autumn = 1, etc.).</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-4</rdommin>
+            <rdommax>24</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>isYOY</attrlabl>
+        <attrdef>Logical, is the fish a young-of-year (YOY)? YOY here are age-0 fish and age-1 fish in the spring. Age-1 fish are included because there is a very rapid growth in spring and we group smaller fish before rapid growth and older, larger fish.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>TRUE</edomv>
+            <edomvd>is a YOY</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>FALSE</edomv>
+            <edomvd>is not a YOY</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>sex</attrlabl>
+        <attrdef>Sex of fish, if known, based on visual observation.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>f</edomv>
+            <edomvd>female</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>m</edomv>
+            <edomvd>male</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <edom>
+            <edomv>p</edomv>
+            <edomvd>precocious male (salmon only)</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>cf</attrlabl>
+        <attrdef>Condition factor. (observedWeight / observedLength^3) * 100.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.0102736911317498</rdommin>
+            <rdommax>1.01148030142113</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>relCF</attrlabl>
+        <attrdef>Relative condition factor. (observedWeight / expectedWeight) * 100. Expected weight is calculated from the length-weight relationship for the species.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.00951601089233797</rdommin>
+            <rdommax>0.939983926224948</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>dateEmigrated</attrlabl>
+        <attrdef>Date of emigration from the West Brook if observed to emigrate.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Date of emigration from the West Brook if observed to emigrate. Coded as emigrated if last observation was on PIT antenna at the top or the bottom of the West Brook or captured in `area` = below or above.</udom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanTemperature</attrlabl>
+        <attrdef>Mean temperature between observation dates. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.109791666666667</rdommin>
+            <rdommax>19.8733333333333</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlow</attrlabl>
+        <attrdef>Mean flow between observation dates. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.0673293999005575</rdommin>
+            <rdommax>3.04801217530062</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByRiver</attrlabl>
+        <attrdef>Mean flow by river between observation dates hindcast from Jenn Fair’s model based on flow estimates from each tributary. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.000869134485494164</rdommin>
+            <rdommax>2.7758189799902</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByArea_flowExt</attrlabl>
+        <attrdef>Mean flow by area (flow extension) between observation dates. Flow is from the flow extension model scaled by watershed area as a proportion of WB area. This is the flow value used in most West Brook papers before 2022. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-0.0673293999005575</rdommin>
+            <rdommax>1.80968150434119</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByArea_ByRiver</attrlabl>
+        <attrdef>Mean flow by area (by river) between observation dates. Flow from the West Brook from Jenn Fair’s model scaled to tributaries based on relative tributary area. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>0.00121481501478651</rdommin>
+            <rdommax>2.7758189799902</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanTemperatureScaledBySeason</attrlabl>
+        <attrdef>Mean temperature between observation dates scaled within season. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-3.90430406848896</rdommin>
+            <rdommax>3.200682850382</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowScaledBySeason</attrlabl>
+        <attrdef>Mean flow between observation dates scaled within season. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-2.28493285856452</rdommin>
+            <rdommax>13.2765894635795</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByRiverScaledBySeason</attrlabl>
+        <attrdef>Mean flow by river between observation dates scaled within season. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.36092281401623</rdommin>
+            <rdommax>11.0396878790275</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByArea_flowExtScaledBySeason</attrlabl>
+        <attrdef>Mean flow by area (flow extension) between observation dates scaled within season. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.53285639209512</rdommin>
+            <rdommax>11.1309276318554</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>meanFlowByArea_ByRiverScaledBySeason</attrlabl>
+        <attrdef>Mean flow by area (by river) between observation dates scaled within season. If individual was not observed, median observation date for the sampling occasion was used.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>NA</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <rdom>
+            <rdommin>-1.34808531598159</rdommin>
+            <rdommax>11.0470028482712</rdommax>
+          </rdom>
+        </attrdomv>
+      </attr>
+      <attr>
+        <attrlabl>comments</attrlabl>
+        <attrdef>Comments from the field crew during sampling.</attrdef>
+        <attrdefs>Producer Defined</attrdefs>
+        <attrdomv>
+          <edom>
+            <edomv>&lt;&lt; empty cell &gt;&gt;</edomv>
+            <edomvd>No Data</edomvd>
+            <edomvds>Producer defined</edomvds>
+          </edom>
+        </attrdomv>
+        <attrdomv>
+          <udom>Comments from the field crew during sampling.</udom>
+        </attrdomv>
+      </attr>
+    </detailed>
+  </eainfo>
+  <distinfo>
+    <distrib>
+      <cntinfo>
+        <cntperp>
+          <cntper>GS ScienceBase</cntper>
+          <cntorg>U.S. Geological Survey</cntorg>
+        </cntperp>
+        <cntaddr>
+          <addrtype>mailing address</addrtype>
+          <address>Denver Federal Center, Building 810, Mail Stop 302</address>
+          <city>Denver</city>
+          <state>CO</state>
+          <postal>80225</postal>
+          <country>United States</country>
+        </cntaddr>
+        <cntvoice>1-888-275-8747</cntvoice>
+        <cntemail>sciencebase@usgs.gov</cntemail>
+      </cntinfo>
+    </distrib>
+    <distliab>Unless otherwise stated, all data, metadata and related materials are considered to satisfy the quality standards relative to the purpose for which the data were collected. Although these data and associated metadata have been reviewed for accuracy and completeness and approved for release by the U.S. Geological Survey (USGS), no warranty expressed or implied is made regarding the display or utility of the data for other purposes, nor on all computer systems, nor shall the act of distribution constitute any such warranty.</distliab>
+    <stdorder>
+      <digform>
+        <digtinfo>
+          <formname>Digital Data</formname>
+        </digtinfo>
+        <digtopt>
+          <onlinopt>
+            <computer>
+              <networka>
+                <networkr>https://doi.org/10.5066/P14PDHXM</networkr>
+              </networka>
+            </computer>
+          </onlinopt>
+        </digtopt>
+      </digform>
+      <fees>None</fees>
+    </stdorder>
+  </distinfo>
+  <metainfo>
+    <metd>20240923</metd>
+    <metc>
+      <cntinfo>
+        <cntperp>
+          <cntper>Benjamin Letcher</cntper>
+          <cntorg>USGS - Northeast Region</cntorg>
+        </cntperp>
+        <cntpos>Research Ecologist</cntpos>
+        <cntaddr>
+          <addrtype>mailing and physical</addrtype>
+          <address>EESC SO Conte Anadromous Rsch Ctr,Research Lab</address>
+          <city>Turners Falls</city>
+          <state>MA</state>
+          <postal>01376</postal>
+        </cntaddr>
+        <cntvoice>413-863-3803</cntvoice>
+        <cntemail>bletcher@usgs.gov</cntemail>
+      </cntinfo>
+    </metc>
+    <metstdn>FGDC Biological Data Profile of the Content Standard for Digital Geospatial Metadata</metstdn>
+    <metstdv>FGDC-STD-001.1-1999</metstdv>
+  </metainfo>
+</metadata>
