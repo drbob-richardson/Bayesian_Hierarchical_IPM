@@ -606,6 +606,29 @@ the asymptotic functional, not the rates that generate it.}
 \label{fig:manifold}
 \end{figure}
 
+This non-identification is invisible to local diagnostics. The observed Fisher
+information at the Laplace mode spans seven orders of magnitude, and nine of the
+eleven information eigen-directions contract by more than half from the prior
+(Figure~\ref{fig:subspace}); the single flat direction there is the recruit-size
+location, unconstrained only because recruitment into the window is near zero at
+that mode. A Hessian- or Laplace-based identifiability check would therefore
+declare the model essentially identified, even though the global posterior is the
+multimodal iso-$\lambda$ manifold of Figure~\ref{fig:manifold}. Local curvature
+certifies practical identifiability \emph{at a point}; establishing global
+identifiability requires manifold-revealing MCMC, profile likelihoods, or data
+cloning.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{identified_subspace.png}
+\caption{(a) Prior-to-posterior contraction along the observed-information
+eigen-directions at the West Brook profile-only mode; nine of eleven exceed 0.5,
+suggesting local identifiability. (b) The flattest direction loads almost
+entirely on recruit-size location. Local curvature does not reveal the global
+non-identification of Figure~\ref{fig:manifold}.}
+\label{fig:subspace}
+\end{figure}
+
 \section{Discussion}
 \label{sec:discussion}
 
