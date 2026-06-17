@@ -720,6 +720,52 @@ under-detection near the lower observation window edge.}
 \label{fig:stable}
 \end{figure}
 
+\subsection{External validation against published estimates}
+\label{sec:app-validation}
+The West Brook system has been studied with purpose-built capture--recapture and
+matrix models \citep{letcher2007,letcher2015,kanno2014}, giving an external
+benchmark independent of our analysis (Table~\ref{tab:validation}). Two
+differences must be reconciled. First, time step: the published mean seasonal
+survival of $0.76$ \citep{letcher2015}, compounded over four seasons, implies an
+annual survival near $0.33$, close to our annual apparent survival of $0.28$, and
+the published monthly survivals of $0.89$--$0.94$ \citep{letcher2007} bracket the
+same range. Second, and more important, the published models separate permanent
+emigration from mortality using boundary antennas, so their ``survival'' is close
+to true survival, whereas our mark--recapture estimate is \emph{apparent} survival
+that confounds death with emigration; ours is therefore expected to be modestly
+lower, by roughly the emigration rate (lifetime mainstem--tributary movement of
+28--33\%; \citealp{kanno2014}). Our finding that apparent survival declines with
+size matches the consistently negative size effect on seasonal survival in
+\citet{letcher2015}, plausibly amplified because larger fish both die and emigrate
+more. Our integrated growth ($\approx 32$~mm\,yr$^{-1}$ at 80~mm) is consistent
+with the spring-dominated seasonal increments of \citet{letcher2015}; our annual
+detection ($0.97$) is what four seasonal occasions at the published per-occasion
+$p=0.57$ would produce; and our integrated $\lambda = 1.016$ closely matches the
+only published estimate, $\lambda = 1.0008$ \citep{letcher2007}. The
+profile-plus-recapture analysis thus recovers the externally validated demography
+of this population.
+
+\begin{table}[H]
+\centering
+\caption{External validation of the West Brook estimates against the published
+literature. Published survival is true survival (emigration modelled
+separately); ours is apparent survival, expected to be modestly lower.}
+\label{tab:validation}
+\small
+\begin{tabular}{lll}
+\toprule
+Quantity & This study & Published (West Brook)\\
+\midrule
+Annual survival & 0.28 (apparent) & $\approx$0.33 from seasonal 0.76 \citep{letcher2015};\\
+ & & monthly 0.89--0.94 \citep{letcher2007}\\
+Survival vs.\ size & declining, 0.31$\to$0.12 & negative size effect \citep{letcher2015}\\
+Growth incr.\ @ 80 mm & 32 mm\,yr$^{-1}$ & 14 mm/season, spring-dominated \citep{letcher2015}\\
+Detection & 0.97 (annual) & 0.57 per occasion $\Rightarrow$ 0.97 over 4 \citep{letcher2015}\\
+$\lambda$ & 1.016 [1.00, 1.05] & 1.0008 [0.990, 1.012] \citep{letcher2007}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Discussion}
 \label{sec:discussion}
 
@@ -786,11 +832,21 @@ Statistics} 17, 641--677.
 (2002). Bayesian estimation of a demographic matrix model from stage-frequency
 data. \emph{Ecology} 83, 3285--3298.
 
+\bibitem[Kanno et al.(2014)]{kanno2014} Kanno, Y., Letcher, B.H., Coombs, J.A.,
+Nislow, K.H., Whiteley, A.R. (2014). Linking movement and reproductive history of
+brook trout to assess habitat connectivity in a heterogeneous stream network.
+\emph{Freshwater Biology} 59, 142--154. \doi{10.1111/fwb.12254}.
+
+\bibitem[Letcher et al.(2007)]{letcher2007} Letcher, B.H., Nislow, K.H., Coombs,
+J.A., O'Donnell, M.J., Dubreuil, T.L. (2007). Population response to habitat
+fragmentation in a stream-dwelling brook trout population. \emph{PLoS ONE} 2,
+e1139. \doi{10.1371/journal.pone.0001139}.
+
 \bibitem[Letcher et al.(2015)]{letcher2015} Letcher, B.H., Schueller, P., Bassar,
 R.D., Nislow, K.H., Coombs, J.A., et al. (2015). Robust estimates of environmental
 effects on population vital rates: an integrated capture--recapture model of
 seasonal brook trout growth, survival and movement in a stream network.
-\emph{Journal of Animal Ecology} 84, 337--352.
+\emph{Journal of Animal Ecology} 84, 337--352. \doi{10.1111/1365-2656.12308}.
 
 \bibitem[Merow et al.(2014)]{merow2014} Merow, C., Dahlgren, J.P., Metcalf,
 C.J.E., Childs, D.Z., Evans, M.E.K., et al. (2014). Advancing population ecology
