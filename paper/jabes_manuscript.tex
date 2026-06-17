@@ -28,13 +28,14 @@
 \newcommand{\Normal}{\mathcal{N}}
 
 % Visible placeholder for biologist coauthors to complete. Statistical-modeling
-% sections are drafted; biology/ecology pieces are flagged like this.
+% sections are drafted; biology/ecology pieces are flagged like this. The bold
+% label here is a deliberate editorial marker, not manuscript text.
 \newcommand{\needbio}[1]{%
   \par\smallskip\noindent%
-  \textcolor{purple}{$\blacktriangleright$~\textbf{[COAUTHOR INPUT NEEDED~--~biology/ecology]:}\space\textit{#1}}%
+  \textcolor{purple}{$\blacktriangleright$~\textbf{[COAUTHOR INPUT NEEDED, biology/ecology]:}\space\textit{#1}}%
   \par\smallskip}
 
-\title{\bfseries What Can Repeated Size Profiles Identify?\\
+\title{What Can Repeated Size Profiles Identify?\\
 Bayesian Inference and Confounding in Inverse Integral Projection Models}
 
 \author{%
@@ -49,35 +50,35 @@ Bayesian Inference and Confounding in Inverse Integral Projection Models}
 
 \begin{abstract}
 \noindent
-Repeated cross-sectional size profiles---counts of individuals by body
-size collected over several years---are among the most common and least
-expensive data in population ecology. It is tempting to invert a size-structured
-integral projection model (IPM) against such data and read off survival, growth,
-and reproduction. We ask instead a prior question: \emph{which} vital rates are
-identified by repeated profiles, which are confounded, and what additional
-information resolves them. Using an individual-based generator distinct from the
-recovery model, a positive numerical-quadrature inverse IPM, and a fully Bayesian
-treatment, we show that size profiles reliably recover survival, the growth
-increment, and the recruit-size distribution, but that recruitment intensity is
-only weakly identified, along a single ridge in parameter space. We prove two
-identifiability results---a decomposition result (the total per-capita
+Repeated cross-sectional size profiles, meaning counts of individuals by body
+size collected over several years, are among the most common and least expensive
+data in population ecology. It is tempting to invert a size-structured integral
+projection model (IPM) against such data and read off survival, growth, and
+reproduction. We ask a prior question instead: which vital rates are identified
+by repeated profiles, which are confounded, and what additional information
+resolves them. Using an individual-based generator distinct from the recovery
+model, a positive numerical-quadrature inverse IPM, and a fully Bayesian
+treatment, we find that size profiles reliably recover survival, the growth
+increment, and the recruit-size distribution, while recruitment intensity is only
+weakly identified, along a single ridge in parameter space. Two identifiability
+results explain this. A decomposition result shows that the total per-capita
 contribution of each size is identified but its split into survival and
-recruitment is not, wherever growth and recruit sizes overlap) and an excitation
-result (near a stable size distribution, profiles constrain the asymptotic growth
-rate $\lambda$ and the stable shape far more tightly than the vital rates that
-generate them)---and confirm both numerically. We calibrate the posterior
-approximation by simulation-based calibration, quantify how size-dependent
-detection corrupts recovery, and measure how much auxiliary individual-level data
-are required to break the confounding. A 20-year brook trout capture--mark--recapture study illustrates the
-central caution: a profile-only fit can look entirely plausible yet badly
-misestimate growth and the size pattern of survival, which only the individual
-data reveal. We frame the contribution as a diagnostic framework---what is
-identified, how to detect confounding, and how to design the data or priors
-needed for credible inference---rather than a claim that profiles generally
-identify vital rates.
+recruitment is not, wherever growth and recruit sizes overlap. An excitation
+result shows that near a stable size distribution, profiles constrain the
+asymptotic growth rate $\lambda$ and the stable shape far more tightly than the
+vital rates that generate them. We confirm both numerically, calibrate the
+posterior approximation by simulation-based calibration, quantify how
+size-dependent detection corrupts recovery, and measure how much auxiliary
+individual-level data are needed to break the confounding. A 20-year brook trout
+capture--mark--recapture study illustrates the practical risk: a profile-only fit
+can look entirely plausible yet badly misestimate growth and the size pattern of
+survival, which only the individual data reveal. We therefore present the work as
+a diagnostic framework for what is identified, how to detect confounding, and how
+to design the data or priors needed for credible inference, rather than as a
+claim that profiles generally identify vital rates.
 \end{abstract}
 
-\noindent\textbf{Keywords:} integral projection models; identifiability;
+\noindent\textit{Keywords:} integral projection models; identifiability;
 inverse problems; Bayesian hierarchical models; integrated population models;
 simulation-based calibration; size-structured populations.
 
@@ -86,10 +87,10 @@ simulation-based calibration; size-structured populations.
 
 Size-structured populations are routinely monitored by repeated cross-sectional
 surveys that record the body sizes of sampled individuals. The resulting
-\emph{size profiles}---histograms of size at successive census times---are
+\emph{size profiles}, histograms of size at successive census times, are
 inexpensive relative to individual marking, and they exist for many taxa over
 long periods. The integral projection model
-\citep{easterling2000,ellner2006,merow2014} provides a natural mechanistic
+\citep{easterling2000,ellner2006,merow2014} gives a natural mechanistic
 description of how such a profile should evolve: a kernel built from
 size-dependent survival, growth, and reproduction maps this year's size
 distribution to next year's. A seemingly direct strategy is therefore to invert
@@ -99,31 +100,28 @@ an instance of a classic inverse problem for structured populations
 ill-posed: many different vital-rate configurations can generate nearly identical
 profile dynamics.
 
-The central message of this paper is that the correct scientific question is not
-``can we fit an inverse IPM to size profiles'' (we almost always can) but
-``\emph{what does the fit identify}.'' A model can reproduce observed profile
-dynamics accurately while estimating a population-effective transition operator
-that differs from the individual vital rates that generated the data, and it can
-report narrow posterior intervals that are an artifact of the prior rather than
-the data. We therefore treat identifiability, confounding, and prior sensitivity
-as first-class objects of study, declare the estimands before fitting, and
-validate recovery against data generated by a process \emph{other} than the
-recovery model.
+We argue that the right question is not ``can we fit an inverse IPM to size
+profiles'' (we almost always can) but ``what does the fit identify.'' A model can
+reproduce observed profile dynamics accurately while estimating a
+population-effective transition operator that differs from the individual vital
+rates that generated the data, and it can report narrow posterior intervals that
+are an artifact of the prior rather than the data. We therefore treat
+identifiability, confounding, and prior sensitivity as objects of study in their
+own right, declare the estimands before fitting, and validate recovery against
+data generated by a process other than the recovery model.
 
-Our contributions are: (i) a clean separation of an individual-based biological
+This paper makes five contributions. We separate an individual-based biological
 generator from the recovery model, so that the inverse IPM is never validated
-only on data from the same IPM; (ii) a decomposition of which vital rates are
-identified by repeated profiles and a characterization---analytical and
-numerical---of the confounding ridge between recruitment intensity and its
-size gradient; (iii) a calibrated Bayesian workflow, including
-simulation-based calibration of the posterior approximation and an explicit
-demonstration that size-dependent detection, if unmodeled, is mistaken for
-demography; (iv) a quantitative account of how much auxiliary individual data
-break the confounding, including robust prior borrowing and its transportability
-limits; and (v) a real-data application to a long brook trout time series in
-which profile-only inference is benchmarked against capture--mark--recapture and
-integrated analyses. The methodological emphasis and the identifiability
-diagnostics are intended to be portable to other size- or stage-structured
+only on data from the same IPM. We characterize, analytically and numerically,
+which vital rates repeated profiles identify, and the confounding ridge between
+recruitment intensity and its size gradient. We give a calibrated Bayesian
+workflow, including simulation-based calibration of the posterior approximation
+and a demonstration that size-dependent detection, if unmodeled, is read as
+demography. We quantify how much auxiliary individual data break the confounding,
+including robust prior borrowing and its transportability limits. Finally, we
+apply the framework to a long brook trout time series, benchmarking profile-only
+inference against capture--mark--recapture and integrated analyses. The methods
+and diagnostics are meant to carry over to other size- and stage-structured
 inverse problems.
 
 \needbio{One to two paragraphs of ecological and management motivation:
@@ -135,26 +133,27 @@ literature for the focal taxa.}
 The remainder of the paper declares the estimands and notation
 (Section~\ref{sec:estimands}), specifies the generator, observation process,
 recovery model, priors, inference, and diagnostics (Section~\ref{sec:methods}),
-reports the simulation experiments (Section~\ref{sec:sim}), presents the brook
-trout application (Section~\ref{sec:app}), and discusses scope and limitations
+develops the identifiability analysis (Section~\ref{sec:ident}), reports the
+simulation experiments (Section~\ref{sec:sim}), presents the brook trout
+application (Section~\ref{sec:app}), and discusses scope and limitations
 (Section~\ref{sec:discussion}).
 
 \section{Estimands and Notation}
 \label{sec:estimands}
 
 We distinguish four inferential targets and report them separately throughout,
-because good performance on one does not imply recovery of another:
+since good performance on one does not imply recovery of another:
 \begin{enumerate}
-  \item \textbf{Individual vital rates:} survival probability $s(x)$, mean and
+  \item \textit{Individual vital rates:} survival probability $s(x)$, mean and
   spread of the growth transition $g(x'\mid x)$, realized recruitment intensity
   $r(x)$, and the recruit-size distribution $b(x'\mid x)$, as functions of
   individual size $x$.
-  \item \textbf{Population-effective rates:} the same quantities after averaging
-  over unobserved heterogeneity, movement, and detection---what a size-only model
-  can at best target.
-  \item \textbf{Kernel functionals:} the dominant eigenvalue $\lambda$ (asymptotic
+  \item \textit{Population-effective rates:} the same quantities after averaging
+  over unobserved heterogeneity, movement, and detection, which is the most a
+  size-only model can target.
+  \item \textit{Kernel functionals:} the dominant eigenvalue $\lambda$ (asymptotic
   population growth rate), the stable size distribution, and sensitivities.
-  \item \textbf{Prediction targets:} next-year and multi-year size profiles.
+  \item \textit{Prediction targets:} next-year and multi-year size profiles.
 \end{enumerate}
 Throughout, $x$ denotes size on a fixed mesh, $\Delta x$ the mesh spacing,
 $\boldsymbol{\mu}_t$ the latent population size-intensity at census $t$, and
@@ -176,7 +175,7 @@ survival, next size is drawn from a growth distribution,
 \begin{equation}
   x_{i,t+1}\mid S_{it}=1 \sim \Normal\{m_g(x_{it}),\sigma_g^2\},
 \end{equation}
-and realized recruitment is generated separately as an individual count process
+and realized recruitment is generated separately as an individual count process,
 with recruit sizes drawn independently of parent size up to its mean,
 \begin{equation}
   R_{it}\sim\operatorname{Poisson}\{r(x_{it})\,\mathbb{1}(q_i=\mathrm{F})\cdot c\},
@@ -185,7 +184,7 @@ with recruit sizes drawn independently of parent size up to its mean,
 \end{equation}
 Female reproductive output is scaled so that its population average matches the
 declared recruitment curve. Survival, growth, and reproduction are thus distinct
-stochastic events: the simulated population does not evolve by deterministic
+stochastic events, and the simulated population does not evolve by deterministic
 application of the recovery IPM.
 
 \needbio{Confirm that this individual-level generator matches the biology of the
@@ -214,12 +213,12 @@ strictly positive kernel,
   F(x',x) &= r(x)\,b(x'\mid x),
 \end{align}
 with both conditional size densities normalized,
-$\int g(x'\mid x)\,dx'=\int b(x'\mid x)\,dx'=1$. Consequently the column
-integrals of $P$ and $F$ are exactly $s(x)$ and $r(x)$, removing arbitrary
-scaling between recruitment intensity and recruit-size shape. This normalization
-does \emph{not} by itself identify the split of $K$ into $P$ and $F$; that split
-must be learned from temporal information, restrictions, priors, or auxiliary
-data. The vital-rate functions are parameterized at a centering size of 80 with
+$\int g(x'\mid x)\,dx'=\int b(x'\mid x)\,dx'=1$. The column integrals of $P$ and
+$F$ are then exactly $s(x)$ and $r(x)$, which removes arbitrary scaling between
+recruitment intensity and recruit-size shape. This normalization does not by
+itself identify the split of $K$ into $P$ and $F$; that split must be learned
+from temporal information, restrictions, priors, or auxiliary data. The
+vital-rate functions are parameterized at a centering size of 80 with
 $z(x)=(x-80)/20$:
 \begin{align}
   \operatorname{logit}s(x) &= \alpha_s+\beta_s z, &
@@ -229,12 +228,12 @@ $z(x)=(x-80)/20$:
   m_b(x) &= \alpha_b+\beta_b z, &
   \sigma_b &= e^{\eta_b},
 \end{align}
-giving ten demographic parameters; the Gamma--Poisson model adds
-$\log\phi$. The continuous operator is discretized on a regular mesh,
+giving ten demographic parameters; the Gamma--Poisson model adds $\log\phi$. The
+continuous operator is discretized on a regular mesh,
 $\boldsymbol{\mu}_{t+1}=\Delta x\,\mathbf{K}\boldsymbol{\mu}_t$, with conditional
-normal transition probabilities \emph{integrated over target bins} rather than
-evaluated at bin centers (which otherwise inflates recruit-size variance at
-coarse bins), and renormalized over the retained mesh.
+normal transition probabilities integrated over target bins rather than evaluated
+at bin centers, which otherwise inflates recruit-size variance at coarse bins,
+and renormalized over the retained mesh.
 
 \subsection{Priors}
 We use independent weakly informative normal priors on the transformed
@@ -247,8 +246,8 @@ than only as abstract prior standard deviations (Section~\ref{sec:sim-aux}).
 
 \subsection{Inference}
 Posterior computation uses maximum \emph{a posteriori} optimization with Gaussian
-Laplace approximations for the broad grids---fast and resumable---audited against
-adaptive-Metropolis MCMC on representative datasets, and validated by
+Laplace approximations for the broad grids, which are fast and resumable, audited
+against adaptive-Metropolis MCMC on representative datasets, and validated by
 simulation-based calibration \citep{cook2006,talts2018}. Non-positive-definite
 posterior Hessians are recorded as approximation failures and excluded from
 coverage summaries. For the finite-population state-space variant we use a
@@ -257,12 +256,12 @@ material); the present paper's claims rest on the deterministic projection
 likelihood and its audited approximation.
 
 \subsection{Identifiability diagnostics}
-We report, for every fit: (i) prior-to-posterior contraction
+We report, for every fit, the prior-to-posterior contraction
 $1-\mathrm{sd}_{\text{post}}/\mathrm{sd}_{\text{prior}}$ per parameter, which
-separates data-informed from prior-dominated quantities; (ii) the posterior
+separates data-informed from prior-dominated quantities; the posterior
 correlation between recruitment level $\alpha_r$ and slope $\beta_r$, the leading
-confounded pair; and (iii) the condition number and least-informed eigenvector of
-the observed information, which expose weakly identified directions even when no
+confounded pair; and the condition number and least-informed eigenvector of the
+observed information, which expose weakly identified directions even when no
 single parameter is flat.
 
 \section{Identifiability Analysis}
@@ -295,12 +294,12 @@ $(s_j,r_j)$ and the local density values trade off freely subject to
 nonnegativity and the normalization constraints. $\square$
 
 \smallskip
-This is exactly the pattern we observe. Recruit sizes are small and overlap the
-sizes that small survivors grow into, so recruitment \emph{intensity} is
-confounded with small-fish survival and growth; survival of larger sizes, whose
-grown distribution avoids the recruit band, is identified, as is the recruit-size
-distribution itself. The leading practical shadow is the recruitment level/slope
-ridge of Section~\ref{sec:sim-confound} (Figure~\ref{fig:ridge}): with all other
+This matches what we observe. Recruit sizes are small and overlap the sizes that
+small survivors grow into, so recruitment intensity is confounded with small-fish
+survival and growth, while survival of larger sizes, whose grown distribution
+avoids the recruit band, is identified, as is the recruit-size distribution
+itself. The clearest practical consequence is the recruitment level/slope ridge
+of Section~\ref{sec:sim-confound} (Figure~\ref{fig:ridge}): with all other
 parameters fixed, $(\alpha_r,\beta_r)$ trade off along a near-flat direction with
 posterior correlation below $-0.95$.
 
@@ -313,18 +312,19 @@ $\boldsymbol{\mu}_t=c_t\,\mathbf{w}$ for all $t$. Then the expected data depend 
 the kernel only through $\Delta x\,\mathbf{K}\mathbf{w}=\lambda\mathbf{w}$, with
 $\lambda=c_{t+1}/c_t$. Any kernel $\mathbf{K}'$ sharing this dominant eigenpair
 produces identical expected profiles, so the dominant eigenvalue $\lambda$ and the
-stable shape $\mathbf{w}$ are identified, but the remaining
-$m(m-1)$ degrees of freedom of $\mathbf{K}$---and hence the vital
-rates beyond $(\lambda,\mathbf{w})$---are not. Identifying more of $\mathbf{K}$
-requires the population to occupy multiple linearly independent states (excitation:
-cohort pulses, environmental variation, or transient non-stationary dynamics).
+stable shape $\mathbf{w}$ are identified, while the remaining $m(m-1)$ degrees of
+freedom of $\mathbf{K}$, and hence the vital rates beyond $(\lambda,\mathbf{w})$,
+are not. Identifying more of $\mathbf{K}$ requires the population to occupy
+multiple linearly independent states (excitation: cohort pulses, environmental
+variation, or transient non-stationary dynamics).
 \end{proposition}
-\noindent This makes ``a population observed near its stable size distribution
-carries little information about its generating operator'' precise, and predicts
-that the kernel \emph{functional} $\lambda$ is recovered far better than the rates
-that produce it. Section~\ref{sec:app-mcmc} confirms this directly in the brook
-trout data: the profile-only posterior spreads across biologically very different
-vital-rate regimes that nonetheless share nearly the same $\lambda$.
+\noindent The proposition makes precise the intuition that a population observed
+near its stable size distribution carries little information about its generating
+operator, and it predicts that the kernel functional $\lambda$ is recovered far
+better than the rates that produce it. Section~\ref{sec:app-mcmc} bears this out
+in the brook trout data, where the profile-only posterior spreads across
+biologically very different vital-rate regimes that share nearly the same
+$\lambda$.
 
 \section{Simulation Experiments}
 \label{sec:sim}
@@ -332,18 +332,17 @@ vital-rate regimes that nonetheless share nearly the same $\lambda$.
 \subsection{The recruitment confounding ridge}
 \label{sec:sim-confound}
 A large, low-noise data set generated from the recovery model itself
-(one long trajectory, full detection, $\sim$6000 individuals) isolates
-\emph{structural} identifiability from Monte Carlo noise. The profile likelihood
-is extremely peaked in most directions but nearly flat along a single ridge that
-trades recruitment level against recruitment slope
-(Figure~\ref{fig:ridge}): the posterior correlation between $\alpha_r$ and
-$\beta_r$ is $-0.96$, the curvature of the two-dimensional log-likelihood implies
-a ridge correlation of $0.98$, and the observed-information condition number
-exceeds $7\times10^3$. Intuitively, the profile data constrain the total kernel
-$K$ and the influx into each size bin, but not the partition of that influx
-between survival-growth flux and recruitment flux---so a higher recruitment level
-with a flatter size gradient produces nearly the same profile dynamics as a lower
-level with a steeper gradient.
+(one long trajectory, full detection, about 6000 individuals) isolates structural
+identifiability from Monte Carlo noise. The profile likelihood is sharply peaked
+in most directions but nearly flat along a single ridge that trades recruitment
+level against recruitment slope (Figure~\ref{fig:ridge}): the posterior
+correlation between $\alpha_r$ and $\beta_r$ is $-0.96$, the curvature of the
+two-dimensional log-likelihood implies a ridge correlation of $0.98$, and the
+observed-information condition number exceeds $7\times10^3$. The profile data
+constrain the total kernel $K$ and the influx into each size bin, but not the
+partition of that influx between survival-growth flux and recruitment flux, so a
+higher recruitment level with a flatter size gradient produces nearly the same
+profile dynamics as a lower level with a steeper gradient.
 
 \begin{figure}[H]
 \centering
@@ -351,7 +350,7 @@ level with a steeper gradient.
 \caption{Relative profile log-likelihood over recruitment level $\alpha_r$ and
 slope $\beta_r$, all other parameters at truth (red cross), capped at
 $\Delta\log L=-40$ to reveal structure. The likelihood is sharply peaked except
-along a thin ridge oriented in the negative-correlation direction: the
+along a thin ridge oriented in the negative-correlation direction, which is the
 non-identified recruitment direction.}
 \label{fig:ridge}
 \end{figure}
@@ -363,22 +362,20 @@ near-stationarity and should weaken as the population is perturbed off its stabl
 distribution. We tested this with matched data sets differing only in the initial
 state, interpolated from exactly the stable distribution $\mathbf{w}$ to a strong
 small-size cohort pulse, holding the vital rates, population size, and observation
-noise fixed (Figure~\ref{fig:excitation}). Three patterns emerge. First, the
-dominant eigenvalue $\lambda$ is recovered essentially perfectly at \emph{every}
-excitation level (relative error $<0.01$), including at exact stationarity---the
-asymptotic functional is identified even when the rates are not, the positive half
-of Proposition~\ref{prop:excite}. Second, survival remains identified throughout
-(contraction $\approx 0.98$). Third, recruitment intensity---nearly unrecoverable
-near stationarity (relative error $\approx 0.8$--$1.1$, level/slope posterior
-correlation below $-0.99$)---is progressively recovered as excitation increases,
-reaching relative error $0.03$ and level/slope correlation $-0.31$ under the
-strongest cohort pulse. The confounding is thus \emph{excitation-limited}: a
-perturbed population (following a disturbance, a strong cohort, or environmental
-forcing) carries the temporal information needed to separate recruitment from
-survival-growth, whereas one observed near equilibrium does not. This converts the
-negative identifiability result into concrete design guidance---to recover
-recruitment from size profiles, observe the population away from its stable
-distribution.
+noise fixed (Figure~\ref{fig:excitation}). The dominant eigenvalue $\lambda$ is
+recovered accurately at every excitation level (relative error below $0.01$),
+including at exact stationarity, so the asymptotic functional is identified even
+when the rates are not. Survival remains identified throughout (contraction about
+$0.98$). Recruitment intensity, by contrast, is nearly unrecoverable near
+stationarity (relative error $0.8$ to $1.1$, level/slope posterior correlation
+below $-0.99$) and is progressively recovered as excitation increases, reaching
+relative error $0.03$ and level/slope correlation $-0.31$ under the strongest
+cohort pulse. The confounding is thus excitation-limited: a perturbed population,
+following a disturbance, a strong cohort, or environmental forcing, carries the
+temporal information needed to separate recruitment from survival-growth, whereas
+one observed near equilibrium does not. The practical implication is a design
+recommendation. To recover recruitment from size profiles, observe the population
+away from its stable distribution.
 
 \begin{figure}[H]
 \centering
@@ -393,18 +390,17 @@ magnitude, while $\lambda$ is recovered accurately at all excitation levels.}
 
 \subsection{Robustness to flexible vital-rate forms}
 \label{sec:sim-spline}
-To rule out that the confounding is an artifact of the parametric vital-rate
+To check that the confounding is not an artifact of the parametric vital-rate
 forms, we refit data generated from the parametric truth with a flexible model in
 which survival, the growth increment, log-recruitment, and recruit mean are each
-natural-cubic-spline functions of size (19 parameters; weakly informative,
-lightly shrunk coefficient priors). The flexible model recovers survival, growth,
-and the recruit-size curve closely over the data-rich size range, but fails to
-recover recruitment intensity, which stays near zero and misses the true
-exponential rise (Figure~\ref{fig:spline}). Averaged over sizes, the posterior
-coefficient of variation of the recruitment curve is $17.5\times$ that of survival
-($0.57$ vs.\ $0.033$). The confounding is therefore structural---the decomposition
-limit of Proposition~\ref{prop:decomp}---and not a consequence of the parametric
-kernel.
+natural-cubic-spline functions of size (19 parameters; weakly informative, lightly
+shrunk coefficient priors). The flexible model recovers survival, growth, and the
+recruit-size curve closely over the data-rich size range, but fails to recover
+recruitment intensity, which stays near zero and misses the true exponential rise
+(Figure~\ref{fig:spline}). Averaged over sizes, the posterior coefficient of
+variation of the recruitment curve is $17.5$ times that of survival ($0.57$
+vs.\ $0.033$). The confounding is therefore structural, the decomposition limit of
+Proposition~\ref{prop:decomp}, and not a consequence of the parametric kernel.
 
 \begin{figure}[H]
 \centering
@@ -412,7 +408,7 @@ kernel.
 \caption{Flexible spline inverse IPM fitted to data from the parametric truth
 (dashed lines), with 95\% posterior bands. Survival (a), growth (b), and recruit
 size (d) are recovered over the data-rich size range; recruitment intensity (c)
-is not, remaining near zero with a wide band---the confounding persists
+is not, remaining near zero with a wide band. The confounding persists
 nonparametrically.}
 \label{fig:spline}
 \end{figure}
@@ -425,11 +421,11 @@ detection, initial profile shape, and recovery likelihood (Poisson vs.\
 Gamma--Poisson), producing 240 simulated datasets and 480 fits. Replicated short
 trajectories outperformed one long trajectory on average
 (Table~\ref{tab:design}), but no design achieved nominal coverage for all
-quantities. Crucially, recovery was highly quantity-dependent
+quantities. Recovery was strongly quantity-dependent
 (Figure~\ref{fig:cov-quantity}): the recruit-size distribution, survival, and
 mean growth were recovered well, whereas recruitment intensity and the dominant
-eigenvalue were biased and overconfident---the simulation counterpart of the
-ridge in Section~\ref{sec:sim-confound}.
+eigenvalue were biased and overconfident, the simulation counterpart of the ridge
+in Section~\ref{sec:sim-confound}.
 
 \begin{table}[H]
 \centering
@@ -462,13 +458,13 @@ We validated the Laplace posterior by simulation-based calibration, generating
 data from the recovery model's own data-generating process so that rank
 non-uniformity isolates computational and approximation error rather than
 misspecification (Figure~\ref{fig:sbc}). Under an informative prior, 200 of 200
-fits succeeded and 10 of 11 parameters had uniform rank statistics
-(only the overdispersion parameter $\log\phi$ was mildly miscalibrated). Under a
-diffuse prior the rank histograms became U-shaped---posterior intervals
-overconfident---most severely along exactly the confounded recruitment and growth
-directions. The practical implication is that, under diffuse priors, interval
-inference for the confounded directions should come from full posterior sampling
-rather than the Gaussian approximation.
+fits succeeded and 10 of 11 parameters had uniform rank statistics, with only the
+overdispersion parameter $\log\phi$ mildly miscalibrated. Under a diffuse prior
+the rank histograms became U-shaped, indicating overconfident intervals, most
+severely along the confounded recruitment and growth directions. The practical
+implication is that, under diffuse priors, interval inference for the confounded
+directions should come from full posterior sampling rather than the Gaussian
+approximation.
 
 \begin{figure}[H]
 \centering
@@ -484,13 +480,14 @@ recruitment slope.}
 \label{sec:sim-detect}
 A constant, size-independent detection probability is absorbed by the linear
 projection and does not bias the profile-only fit. Size-dependent detection does.
-We simulated three regimes---constant detection, unknown time-varying effort, and
-size-dependent detection---and fit the standard recovery model
+We simulated three regimes (constant detection, unknown time-varying effort, and
+size-dependent detection) and fit the standard recovery model
 (Figure~\ref{fig:detect}). Under constant detection, survival-at-80 coverage was
 0.90--0.95; under time-varying effort it fell to about 0.65; under
 size-dependent detection it collapsed to zero, because a size-dependent change in
-detectability is absorbed as demographic change. This is the dominant real-world
-threat to profile-only inference and motivates the application caveats below.
+detectability is absorbed as demographic change. This is the main practical
+threat to profile-only inference, and it motivates the caveats in the
+application.
 
 \begin{figure}[H]
 \centering
@@ -509,12 +506,12 @@ explicit auxiliary study of $n_e$ fish analyzed by Poisson regression whose
 (approximate) posterior becomes the prior for $(\alpha_r,\beta_r)$. Correctly
 transportable external data improved recruitment recovery monotonically in $n_e$;
 800 external fish cut recruitment-curve RMSE by about 70\% and raised
-recruitment-at-80 coverage from 0.53 to 0.87. A precise but \emph{biased}
-external study produced low point-estimate error yet zero coverage; robust
-(mixture) borrowing mitigated but did not eliminate the damage, and could reject
-a non-transportable study only when the conflict altered profile dynamics along a
-likelihood-informed direction (Figure~\ref{fig:transport}). No single amount of
-external-study bias is universally safe.
+recruitment-at-80 coverage from 0.53 to 0.87. A precise but biased external study
+produced low point-estimate error yet zero coverage; robust (mixture) borrowing
+mitigated but did not eliminate the damage, and could reject a non-transportable
+study only when the conflict altered profile dynamics along a likelihood-informed
+direction (Figure~\ref{fig:transport}). No single amount of external-study bias is
+universally safe.
 
 \begin{figure}[H]
 \centering
@@ -528,15 +525,15 @@ gracefully. Dotted lines: profiles-only performance; dashed: nominal coverage.}
 
 \subsection{Paired-data benchmark}
 \label{sec:sim-paired}
-Finally, on 200 datasets each carrying both profiles and capture--recapture
-histories, we compared profile-only, capture--recapture-only, integrated, and
-complete-history oracle analyses (Figure~\ref{fig:paired}). Capture--recapture
-efficiently identified survival and growth but carried essentially no information
-about recruitment (its apparently perfect recruitment coverage reflected
-prior-width intervals, not recovery). Integration improved point accuracy for
-survival and growth but narrowed intervals below nominal, as residual
-discrepancy between observed and deterministically projected profiles was
-absorbed by other parameters---a caution we return to in the application.
+On 200 datasets each carrying both profiles and capture--recapture histories, we
+compared profile-only, capture--recapture-only, integrated, and complete-history
+oracle analyses (Figure~\ref{fig:paired}). Capture--recapture efficiently
+identified survival and growth but carried essentially no information about
+recruitment; its apparently perfect recruitment coverage reflected prior-width
+intervals, not recovery. Integration improved point accuracy for survival and
+growth but narrowed intervals below nominal, as residual discrepancy between
+observed and deterministically projected profiles was absorbed by other
+parameters, a point we return to in the application.
 
 \begin{figure}[H]
 \centering
@@ -585,25 +582,24 @@ recapture events), and an integrated model combining both likelihoods. Growth
 estimated from recaptures is detection-free and serves as the cleanest
 cross-check.
 
-The profile-only fit is internally plausible---moderate survival, positive
-growth, $\lambda\approx 1$, a positive-definite posterior---yet it is contradicted
-by the individual data on both quantities the recaptures can check
-(Table~\ref{tab:wb}, Figure~\ref{fig:wb}). Profile-only inference
-\emph{underestimates the growth increment} (12.6 vs.\ 32.3~mm\,yr$^{-1}$), the
-signature of a near-stationary size distribution that hides how fast individuals
-move through it, and \emph{misses the size gradient in apparent survival}
-(roughly flat near 0.44, versus a clear decline from 0.31 to 0.12 with size in the
-recapture and integrated analyses, reflecting greater emigration of larger fish).
-Recruitment intensity remains unidentified by profiles (level/slope posterior
-correlation $-0.995$), as in the simulations. The integrated analysis adopts the
-recapture survival and growth and tightens the population growth rate to
-$\lambda = 1.016\,[1.00, 1.05]$.
+The profile-only fit is internally plausible (moderate survival, positive growth,
+$\lambda\approx 1$, a positive-definite posterior), yet it is contradicted by the
+individual data on both quantities the recaptures can check
+(Table~\ref{tab:wb}, Figure~\ref{fig:wb}). It underestimates the growth increment
+(12.6 vs.\ 32.3~mm\,yr$^{-1}$), the signature of a near-stationary size
+distribution that hides how fast individuals move through it, and it misses the
+size gradient in apparent survival (roughly flat near 0.44, against a clear
+decline from 0.31 to 0.12 with size in the recapture and integrated analyses,
+reflecting greater emigration of larger fish). Recruitment intensity remains
+unidentified by profiles (level/slope posterior correlation $-0.995$), as in the
+simulations. The integrated analysis adopts the recapture survival and growth and
+tightens the population growth rate to $\lambda = 1.016\,[1.00, 1.05]$.
 
 \begin{table}[H]
 \centering
 \caption{West Brook brook trout: posterior median [95\% interval] by analysis.
-Mark--recapture survival is \emph{apparent} survival, which folds in
-size-dependent emigration from the network.}
+Mark--recapture survival is apparent survival, which folds in size-dependent
+emigration from the network.}
 \label{tab:wb}
 \small
 \begin{tabular}{lccc}
@@ -614,7 +610,7 @@ Survival @ 80 mm  & 0.43 [0.29, 0.60] & 0.31 [0.31, 0.32] & 0.31 [0.31, 0.32]\\
 Survival @ 110 mm & 0.45 [0.35, 0.55] & 0.20 [0.20, 0.21] & 0.20 [0.19, 0.21]\\
 Survival @ 140 mm & 0.46 [0.34, 0.58] & 0.12 [0.12, 0.13] & 0.12 [0.11, 0.12]\\
 Growth incr.\ @ 80 mm & 12.6 [9.3, 15.6] & 32.3 [31.7, 32.8] & 32.1 [31.5, 32.7]\\
-$\lambda$ & 0.99 [0.97, 1.11] & --- & 1.016 [1.00, 1.05]\\
+$\lambda$ & 0.99 [0.97, 1.11] & n/a & 1.016 [1.00, 1.05]\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -640,21 +636,21 @@ the framing of the size-dependent-detection caveat for electrofishing.}
 iso-$\lambda$ manifold}
 \label{sec:app-mcmc}
 Replacing the Laplace approximation with full MCMC (four adaptive-Metropolis
-chains) exposes the non-identifiability directly. The chains do \emph{not}
-converge on the vital rates (split $\widehat R$ up to $6.6$); this is not a
-sampler failure but a property of the target. The chains settle in biologically
-distinct regimes---survival at 80\,mm from $0.005$ to $0.12$, growth increment
-from $3$ to $14$\,mm, recruitment over more than an order of magnitude---that all
-reproduce the near-stationary profiles of Figure~\ref{fig:wb-profiles}. Yet
-across the pooled posterior the dominant eigenvalue varies by only 2.5\%
-(coefficient of variation), versus 222\% for survival at 80\,mm and 131\% for
-recruitment intensity (Figure~\ref{fig:manifold}): a direct, real-data instance
-of Proposition~\ref{prop:excite}. The Laplace mode (survival $\approx 0.43$) does
-not lie where the posterior mass concentrates, so its narrow intervals for the
-confounded directions are not trustworthy. We therefore report $\lambda$ as the
-profile-identified functional and treat profile-only vital-rate point estimates
-as non-identified absent individual data; the integrated analysis both resolves
-the rates and shifts $\lambda$ to $1.016\,[1.00,1.05]$.
+chains) exposes the non-identifiability directly. The chains do not converge on
+the vital rates (split $\widehat R$ up to $6.6$), which is a property of the
+target rather than a sampler failure. They settle in biologically distinct
+regimes (survival at 80\,mm from $0.005$ to $0.12$, growth increment from $3$ to
+$14$\,mm, recruitment over more than an order of magnitude) that all reproduce the
+near-stationary profiles of Figure~\ref{fig:wb-profiles}. Across the pooled
+posterior, however, the dominant eigenvalue varies by only 2.5\% (coefficient of
+variation), against 222\% for survival at 80\,mm and 131\% for recruitment
+intensity (Figure~\ref{fig:manifold}), as Proposition~\ref{prop:excite} predicts.
+The Laplace mode (survival about 0.43) does not lie where the posterior mass
+concentrates, so its narrow intervals for the confounded directions are not
+trustworthy. We therefore report $\lambda$ as the profile-identified functional
+and treat profile-only vital-rate point estimates as non-identified absent
+individual data; the integrated analysis both resolves the rates and shifts
+$\lambda$ to $1.016\,[1.00,1.05]$.
 
 \begin{figure}[H]
 \centering
@@ -675,7 +671,7 @@ location, unconstrained only because recruitment into the window is near zero at
 that mode. A Hessian- or Laplace-based identifiability check would therefore
 declare the model essentially identified, even though the global posterior is the
 multimodal iso-$\lambda$ manifold of Figure~\ref{fig:manifold}. Local curvature
-certifies practical identifiability \emph{at a point}; establishing global
+certifies practical identifiability at a single point; establishing global
 identifiability requires manifold-revealing MCMC, profile likelihoods, or data
 cloning.
 
@@ -701,12 +697,12 @@ stable shape are pinned down across the iso-$\lambda$ manifold, as
 Proposition~\ref{prop:excite} predicts. The model-implied stable distribution
 closely matches the observed average size profile over the bulk of the size range
 (Figure~\ref{fig:stable}), confirming that the fitted kernel is self-consistent
-and that the population is observed near its stable distribution---precisely the
-regime in which the vital rates are non-identified. The one systematic departure,
-at the smallest observed sizes, is consistent with under-detection of small fish
-near the lower window edge. This is the constructive reading of the analysis:
-from size profiles one should report and trust the kernel functionals ($\lambda$
-and the stable distribution), while the underlying vital rates require individual
+and that the population is observed near its stable distribution, the regime in
+which the vital rates are non-identified. The one systematic departure, at the
+smallest observed sizes, is consistent with under-detection of small fish near the
+lower window edge. This points to the constructive reading of the analysis: from
+size profiles one should report and trust the kernel functionals ($\lambda$ and
+the stable distribution), while the underlying vital rates require individual
 data.
 
 \begin{figure}[H]
@@ -725,25 +721,25 @@ under-detection near the lower observation window edge.}
 The West Brook system has been studied with purpose-built capture--recapture and
 matrix models \citep{letcher2007,letcher2015,kanno2014}, giving an external
 benchmark independent of our analysis (Table~\ref{tab:validation}). Two
-differences must be reconciled. First, time step: the published mean seasonal
-survival of $0.76$ \citep{letcher2015}, compounded over four seasons, implies an
-annual survival near $0.33$, close to our annual apparent survival of $0.28$, and
-the published monthly survivals of $0.89$--$0.94$ \citep{letcher2007} bracket the
-same range. Second, and more important, the published models separate permanent
-emigration from mortality using boundary antennas, so their ``survival'' is close
-to true survival, whereas our mark--recapture estimate is \emph{apparent} survival
-that confounds death with emigration; ours is therefore expected to be modestly
-lower, by roughly the emigration rate (lifetime mainstem--tributary movement of
-28--33\%; \citealp{kanno2014}). Our finding that apparent survival declines with
-size matches the consistently negative size effect on seasonal survival in
-\citet{letcher2015}, plausibly amplified because larger fish both die and emigrate
-more. Our integrated growth ($\approx 32$~mm\,yr$^{-1}$ at 80~mm) is consistent
-with the spring-dominated seasonal increments of \citet{letcher2015}; our annual
-detection ($0.97$) is what four seasonal occasions at the published per-occasion
-$p=0.57$ would produce; and our integrated $\lambda = 1.016$ closely matches the
-only published estimate, $\lambda = 1.0008$ \citep{letcher2007}. The
-profile-plus-recapture analysis thus recovers the externally validated demography
-of this population.
+differences must be reconciled. The first is time step: the published mean
+seasonal survival of $0.76$ \citep{letcher2015}, compounded over four seasons,
+implies an annual survival near $0.33$, close to our annual apparent survival of
+$0.28$, and the published monthly survivals of $0.89$--$0.94$ \citep{letcher2007}
+bracket the same range. The second, and more important, is that the published
+models separate permanent emigration from mortality using boundary antennas, so
+their ``survival'' is close to true survival, whereas our mark--recapture estimate
+is apparent survival that confounds death with emigration. Ours is therefore
+expected to be modestly lower, by roughly the emigration rate (lifetime
+mainstem--tributary movement of 28--33\%; \citealp{kanno2014}). Our finding that
+apparent survival declines with size matches the consistently negative size effect
+on seasonal survival in \citet{letcher2015}, plausibly amplified because larger
+fish both die and emigrate more. Our integrated growth (about 32~mm\,yr$^{-1}$ at
+80~mm) is consistent with the spring-dominated seasonal increments of
+\citet{letcher2015}; our annual detection ($0.97$) is what four seasonal occasions
+at the published per-occasion $p=0.57$ would produce; and our integrated
+$\lambda = 1.016$ is close to the only published estimate, $\lambda = 1.0008$
+\citep{letcher2007}. The profile-plus-recapture analysis thus recovers the
+externally validated demography of this population.
 
 \begin{table}[H]
 \centering
@@ -769,31 +765,30 @@ $\lambda$ & 1.016 [1.00, 1.05] & 1.0008 [0.990, 1.012] \citep{letcher2007}\\
 \section{Discussion}
 \label{sec:discussion}
 
-Repeated size profiles are genuinely informative about some vital rates---survival,
-the growth distribution, and recruit size---and almost uninformative about others,
+Repeated size profiles are informative about some vital rates (survival, the
+growth distribution, and recruit size) and almost uninformative about others,
 chiefly recruitment intensity and, through it, the asymptotic growth rate. The
-confounding is structural (a ridge that trades recruitment level against its size
-gradient), it is sharpened by short series and near-stationary distributions, and
+confounding is structural, a ridge that trades recruitment level against its size
+gradient. It is sharpened by short series and near-stationary distributions, and
 it is easily masked by an informative prior or by unmodeled size-dependent
-detection. The brook trout application makes the practical stakes concrete: a
-profile-only fit that passes every internal check still misstates growth by a
-factor of two and inverts the survival size pattern, errors visible only against
-individual data.
+detection. The brook trout application shows what is at stake: a profile-only fit
+that passes every internal check still misstates growth by a factor of two and
+inverts the survival size pattern, errors visible only against individual data.
 
-For practice we recommend: declaring the estimand before fitting; reporting
+For practice we recommend declaring the estimand before fitting; reporting
 prior-to-posterior contraction and the recruitment level/slope correlation as
-routine identifiability diagnostics; modeling, or at minimum bounding, size-
-dependent detection; and expressing external information as an explicit,
+routine identifiability diagnostics; modeling, or at minimum bounding,
+size-dependent detection; and expressing external information as an explicit,
 transportability-checkable study design. Where individual data exist, an
-integrated analysis is worth far more than its marginal cost, but its intervals
+integrated analysis is worth far more than its marginal cost, though its intervals
 must be interpreted cautiously when the profile and individual components
 disagree.
 
 Limitations include reliance on a parametric vital-rate basis (flexible spline
 bases are a direct extension), a closed-population deterministic projection
 likelihood (the finite-population particle-filtered variant is developed
-separately), and a single applied system. The framework and diagnostics, however,
-are general to size- and stage-structured inverse problems.
+separately), and a single applied system. The framework and diagnostics
+themselves are general to size- and stage-structured inverse problems.
 
 \needbio{Two to three sentences on the ecological/management implications and on
 how these recommendations would change analyses in your systems, plus any
