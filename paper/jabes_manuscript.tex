@@ -391,6 +391,32 @@ magnitude, while $\lambda$ is recovered accurately at all excitation levels.}
 \label{fig:excitation}
 \end{figure}
 
+\subsection{Robustness to flexible vital-rate forms}
+\label{sec:sim-spline}
+To rule out that the confounding is an artifact of the parametric vital-rate
+forms, we refit data generated from the parametric truth with a flexible model in
+which survival, the growth increment, log-recruitment, and recruit mean are each
+natural-cubic-spline functions of size (19 parameters; weakly informative,
+lightly shrunk coefficient priors). The flexible model recovers survival, growth,
+and the recruit-size curve closely over the data-rich size range, but fails to
+recover recruitment intensity, which stays near zero and misses the true
+exponential rise (Figure~\ref{fig:spline}). Averaged over sizes, the posterior
+coefficient of variation of the recruitment curve is $17.5\times$ that of survival
+($0.57$ vs.\ $0.033$). The confounding is therefore structural---the decomposition
+limit of Proposition~\ref{prop:decomp}---and not a consequence of the parametric
+kernel.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{spline_confounding.png}
+\caption{Flexible spline inverse IPM fitted to data from the parametric truth
+(dashed lines), with 95\% posterior bands. Survival (a), growth (b), and recruit
+size (d) are recovered over the data-rich size range; recruitment intensity (c)
+is not, remaining near zero with a wide band---the confounding persists
+nonparametrically.}
+\label{fig:spline}
+\end{figure}
+
 \subsection{Broad recovery grid}
 \label{sec:sim-grid}
 A factorial Monte Carlo grid varied the allocation of a fixed 12-transition
