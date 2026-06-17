@@ -1,7 +1,8 @@
 \documentclass[11pt]{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{microtype}
@@ -57,13 +58,17 @@ identified by repeated profiles, which are confounded, and what additional
 information resolves them. Using an individual-based generator distinct from the
 recovery model, a positive numerical-quadrature inverse IPM, and a fully Bayesian
 treatment, we show that size profiles reliably recover survival, the growth
-increment, and the recruit-size distribution, but that recruitment intensity and
-the population growth rate~$\lambda$ are weakly identified along a single
-ridge in parameter space. We characterize this ridge analytically and
-numerically, calibrate the posterior approximation by simulation-based
-calibration, quantify how size-dependent detection corrupts recovery, and
-measure how much auxiliary individual-level data are required to break the
-confounding. A 20-year brook trout capture--mark--recapture study illustrates the
+increment, and the recruit-size distribution, but that recruitment intensity is
+only weakly identified, along a single ridge in parameter space. We prove two
+identifiability results---a decomposition result (the total per-capita
+contribution of each size is identified but its split into survival and
+recruitment is not, wherever growth and recruit sizes overlap) and an excitation
+result (near a stable size distribution, profiles constrain the asymptotic growth
+rate $\lambda$ and the stable shape far more tightly than the vital rates that
+generate them)---and confirm both numerically. We calibrate the posterior
+approximation by simulation-based calibration, quantify how size-dependent
+detection corrupts recovery, and measure how much auxiliary individual-level data
+are required to break the confounding. A 20-year brook trout capture--mark--recapture study illustrates the
 central caution: a profile-only fit can look entirely plausible yet badly
 misestimate growth and the size pattern of survival, which only the individual
 data reveal. We frame the contribution as a diagnostic framework---what is
@@ -259,6 +264,67 @@ correlation between recruitment level $\alpha_r$ and slope $\beta_r$, the leadin
 confounded pair; and (iii) the condition number and least-informed eigenvector of
 the observed information, which expose weakly identified directions even when no
 single parameter is flat.
+
+\section{Identifiability Analysis}
+\label{sec:ident}
+
+Two results explain, and predict, the empirical recovery patterns reported
+below. Both concern the discretized one-step map
+$\E[\boldsymbol{\mu}_{t+1}]=\Delta x\,\mathbf{K}\boldsymbol{\mu}_t$ with per-capita
+kernel entries $K_{ij}=s_j\,g_{ij}+r_j\,b_{ij}$, where column $j$ collects the
+contributions of source size $j$ to all destination sizes $i$.
+
+\subsection{Decomposition identifiability}
+\begin{proposition}[Total contribution is identified; its split is not, on the
+overlap]
+\label{prop:decomp}
+The column sum $\Delta x\sum_i K_{ij}=s_j+r_j$ equals the total per-capita
+contribution of source size $j$, because $g$ and $b$ are normalized. Hence,
+wherever the kernel column $K_{\cdot j}$ is identified, the sum $s_j+r_j$ is
+identified. The decomposition into survival-growth $s_j g_{\cdot j}$ and
+recruitment $r_j b_{\cdot j}$ is identified on destination sizes where the
+growth density $g(\cdot\mid j)$ and the recruit-size density $b(\cdot\mid j)$
+have disjoint support, and is confounded on destination sizes where they
+overlap.
+\end{proposition}
+\noindent\emph{Argument.} On a destination size $i$ in $\mathrm{supp}(g(\cdot\mid
+j))\setminus\mathrm{supp}(b(\cdot\mid j))$ the entry $K_{ij}=s_j g_{ij}$ involves
+only survival-growth, and symmetrically for recruitment; on the overlap
+$K_{ij}=s_j g_{ij}+r_j b_{ij}$ constrains only the sum of two positive terms, so
+$(s_j,r_j)$ and the local density values trade off freely subject to
+nonnegativity and the normalization constraints. $\square$
+
+\smallskip
+This is exactly the pattern we observe. Recruit sizes are small and overlap the
+sizes that small survivors grow into, so recruitment \emph{intensity} is
+confounded with small-fish survival and growth; survival of larger sizes, whose
+grown distribution avoids the recruit band, is identified, as is the recruit-size
+distribution itself. The leading practical shadow is the recruitment level/slope
+ridge of Section~\ref{sec:sim-confound} (Figure~\ref{fig:ridge}): with all other
+parameters fixed, $(\alpha_r,\beta_r)$ trade off along a near-flat direction with
+posterior correlation below $-0.95$.
+
+\subsection{Excitation and the role of stationarity}
+\begin{proposition}[Near stationarity, only $\lambda$ and the stable shape are
+identified]
+\label{prop:excite}
+Suppose the latent profiles are proportional to a fixed shape,
+$\boldsymbol{\mu}_t=c_t\,\mathbf{w}$ for all $t$. Then the expected data depend on
+the kernel only through $\Delta x\,\mathbf{K}\mathbf{w}=\lambda\mathbf{w}$, with
+$\lambda=c_{t+1}/c_t$. Any kernel $\mathbf{K}'$ sharing this dominant eigenpair
+produces identical expected profiles, so the dominant eigenvalue $\lambda$ and the
+stable shape $\mathbf{w}$ are identified, but the remaining
+$m(m-1)$ degrees of freedom of $\mathbf{K}$---and hence the vital
+rates beyond $(\lambda,\mathbf{w})$---are not. Identifying more of $\mathbf{K}$
+requires the population to occupy multiple linearly independent states (excitation:
+cohort pulses, environmental variation, or transient non-stationary dynamics).
+\end{proposition}
+\noindent This makes ``a population observed near its stable size distribution
+carries little information about its generating operator'' precise, and predicts
+that the kernel \emph{functional} $\lambda$ is recovered far better than the rates
+that produce it. Section~\ref{sec:app-mcmc} confirms this directly in the brook
+trout data: the profile-only posterior spreads across biologically very different
+vital-rate regimes that nonetheless share nearly the same $\lambda$.
 
 \section{Simulation Experiments}
 \label{sec:sim}
@@ -508,6 +574,37 @@ declining apparent survival with size attributable to emigration of larger fish,
 size-selective mortality, or both? What would the management or ecological
 reading of the profile-only versus integrated $\lambda$ be? Please also confirm
 the framing of the size-dependent-detection caveat for electrofishing.}
+
+\subsection{Profile-only uncertainty is multimodal and concentrates on an
+iso-$\lambda$ manifold}
+\label{sec:app-mcmc}
+Replacing the Laplace approximation with full MCMC (four adaptive-Metropolis
+chains) exposes the non-identifiability directly. The chains do \emph{not}
+converge on the vital rates (split $\widehat R$ up to $6.6$); this is not a
+sampler failure but a property of the target. The chains settle in biologically
+distinct regimes---survival at 80\,mm from $0.005$ to $0.12$, growth increment
+from $3$ to $14$\,mm, recruitment over more than an order of magnitude---that all
+reproduce the near-stationary profiles of Figure~\ref{fig:wb-profiles}. Yet
+across the pooled posterior the dominant eigenvalue varies by only 2.5\%
+(coefficient of variation), versus 222\% for survival at 80\,mm and 131\% for
+recruitment intensity (Figure~\ref{fig:manifold}): a direct, real-data instance
+of Proposition~\ref{prop:excite}. The Laplace mode (survival $\approx 0.43$) does
+not lie where the posterior mass concentrates, so its narrow intervals for the
+confounded directions are not trustworthy. We therefore report $\lambda$ as the
+profile-identified functional and treat profile-only vital-rate point estimates
+as non-identified absent individual data; the integrated analysis both resolves
+the rates and shifts $\lambda$ to $1.016\,[1.00,1.05]$.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{identified_manifold.png}
+\caption{Profile-only posterior draws (West Brook brook trout) in the
+survival--recruitment plane, coloured by the implied dominant eigenvalue
+$\lambda$. Biologically very different vital-rate combinations span the plane,
+yet $\lambda$ varies little (CV 2.5\% vs.\ 222\% for survival): profiles identify
+the asymptotic functional, not the rates that generate it.}
+\label{fig:manifold}
+\end{figure}
 
 \section{Discussion}
 \label{sec:discussion}

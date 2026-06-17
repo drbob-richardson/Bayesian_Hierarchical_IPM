@@ -162,4 +162,34 @@ tryCatch({
   cat("Figure 5 (West Brook profiles) written.\n")
 }, error = function(e) cat("Fig5 failed:", conditionMessage(e), "\n"))
 
+# ===========================================================================
+# Figure 6: identified iso-lambda manifold (West Brook profile-only MCMC).
+# ===========================================================================
+tryCatch({
+  m <- readRDS("results/west_brook_application/profile_mcmc.rds")
+  prof <- readRDS("results/west_brook_application/profile_fit.rds")
+  mesh <- prof$mesh; pnames <- names(prof$prior$mean)
+  d <- m$draws; d <- d[round(seq(1, nrow(d), length.out = 1500L)), ]
+  s80 <- plogis(d[, "survival_at_80"]); r80 <- exp(d[, "log_recruitment_at_80"])
+  lam <- apply(d, 1, function(p) {
+    k <- build_centered_ipm(setNames(p, pnames), mesh)
+    max(Re(eigen(k$delta * k$kernel, only.values = TRUE)$values))
+  })
+  png(file.path(fig_dir, "identified_manifold.png"), width = 1500, height = 1150, res = 230)
+  par(mar = c(4.5, 4.5, 2.5, 1))
+  pal <- hcl.colors(64, "Viridis")
+  br <- seq(min(lam), max(lam), length.out = 65)
+  col <- pal[as.integer(cut(lam, breaks = br, include.lowest = TRUE))]
+  plot(s80, r80, log = "y", pch = 19, col = adjustcolor(col, 0.5), cex = 0.5,
+       xlab = "survival at 80 mm", ylab = "recruitment intensity at 80 mm (log)",
+       main = expression("Profile-only posterior draws, coloured by " * lambda))
+  lv <- seq(min(lam), max(lam), length.out = 5)
+  legend("topright", legend = sprintf("%.3f", lv), pch = 19,
+         col = pal[as.integer(cut(lv, breaks = br, include.lowest = TRUE))],
+         title = expression(lambda), bty = "n", cex = 0.9)
+  dev.off()
+  cat(sprintf("Figure 6 (iso-lambda manifold) written. CV(lambda)=%.3f vs CV(survival)=%.2f\n",
+              sd(lam) / mean(lam), sd(s80) / mean(s80)))
+}, error = function(e) cat("Fig6 failed:", conditionMessage(e), "\n"))
+
 cat("Done. Figures in", fig_dir, "\n")
