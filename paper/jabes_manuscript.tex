@@ -356,6 +356,41 @@ non-identified recruitment direction.}
 \label{fig:ridge}
 \end{figure}
 
+\subsection{Excitation restores recruitment identifiability}
+\label{sec:sim-excite}
+Proposition~\ref{prop:excite} predicts that the confounding stems from
+near-stationarity and should weaken as the population is perturbed off its stable
+distribution. We tested this with matched data sets differing only in the initial
+state, interpolated from exactly the stable distribution $\mathbf{w}$ to a strong
+small-size cohort pulse, holding the vital rates, population size, and observation
+noise fixed (Figure~\ref{fig:excitation}). Three patterns emerge. First, the
+dominant eigenvalue $\lambda$ is recovered essentially perfectly at \emph{every}
+excitation level (relative error $<0.01$), including at exact stationarity---the
+asymptotic functional is identified even when the rates are not, the positive half
+of Proposition~\ref{prop:excite}. Second, survival remains identified throughout
+(contraction $\approx 0.98$). Third, recruitment intensity---nearly unrecoverable
+near stationarity (relative error $\approx 0.8$--$1.1$, level/slope posterior
+correlation below $-0.99$)---is progressively recovered as excitation increases,
+reaching relative error $0.03$ and level/slope correlation $-0.31$ under the
+strongest cohort pulse. The confounding is thus \emph{excitation-limited}: a
+perturbed population (following a disturbance, a strong cohort, or environmental
+forcing) carries the temporal information needed to separate recruitment from
+survival-growth, whereas one observed near equilibrium does not. This converts the
+negative identifiability result into concrete design guidance---to recover
+recruitment from size profiles, observe the population away from its stable
+distribution.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{excitation.png}
+\caption{Excitation experiment. As the initial state is perturbed further from
+the stable distribution (x-axis: angle from $\mathbf{w}$): (a) the recruitment
+level/slope confounding breaks and recruitment contraction rises, while survival
+stays identified; (b) recruitment intensity recovery improves by an order of
+magnitude, while $\lambda$ is recovered accurately at all excitation levels.}
+\label{fig:excitation}
+\end{figure}
+
 \subsection{Broad recovery grid}
 \label{sec:sim-grid}
 A factorial Monte Carlo grid varied the allocation of a fixed 12-transition
